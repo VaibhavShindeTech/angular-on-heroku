@@ -4,7 +4,7 @@
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" id="exampleInputEmail1" name="emailField" ngModel
-                aria-describedby="emailHelp" placeholder="Enter email" required #emailField="ngModel">
+                aria-describedby="emailHelp" placeholder="Enter email" required #emailField="ngModel" email>
             <small id="emailHelp" *ngIf="emailField.touched && !emailField.valid" class="form-text text-danger">Please
                 enter valid email id</small>
         </div>
