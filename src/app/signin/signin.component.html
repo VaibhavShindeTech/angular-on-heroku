@@ -1,0 +1,50 @@
+<h3>Sign In using Template Driven Form</h3>
+<div class="container">
+    <form #signinForm="ngForm" (ngSubmit)=loginUser(signinForm)>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" name="emailField" ngModel
+                aria-describedby="emailHelp" placeholder="Enter email" required #emailField="ngModel">
+            <small id="emailHelp" *ngIf="emailField.touched && !emailField.valid" class="form-text text-danger">Please
+                enter valid email id</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="passwordField" ngModel
+                placeholder="Password" required #passwordField="ngModel">
+            <small  *ngIf="passwordField.touched && !passwordField.valid" class="form-text text-danger">Please
+                enter valid password</small>
+
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="termField" ngModel required>
+            <label class="form-check-label" for="exampleCheck1">Agree to Terms</label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="male" id="flexCheckDefault" name="genderField" ngModel required>
+            <label class="form-check-label" for="flexCheckDefault">
+                Male
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="female" id="flexCheckChecked" name="genderField"
+                ngModel required>
+            <label class="form-check-label" for="flexCheckChecked">
+                Female
+            </label>
+        </div>
+        <div class="form-group">
+            <select class="form-select" aria-label="Default select example" name="countryField" ngModel required>
+                <option selected>Select Country(one)</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="Dubai">Dubai</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!signinForm.valid">Submit</button>
+
+    </form>
+
+</div>
